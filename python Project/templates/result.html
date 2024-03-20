@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="bg-[#0F0F0F] text-[#F1F1F1]">
+    <div class="m-10 ">
+        <h1 class="text-center pb-12 text-4xl font-medium">Scraped Data</h1>
+        <div class=" flex justify-items-end w-full mb-3">
+            <div class="flex ml-auto "><button class="p-1 space-y-2 border border-gray-200 divide-y divide-gray-200 rounded shadow dark:divide-gray-700 md:p-1 items-center justify-center dark:border-gray-700" onclick="copyData()"><ion-icon name="copy-outline"></ion-icon>Copy</button></div>
+        </div>
+        <div class="p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow dark:divide-gray-700 md:p-6 dark:border-gray-700 flex text-wrap ">
+            <pre id="scrapedData" class="text-wrap">{{ data }}</pre>
+        </div>
+        
+    </div>
+    
+    <script>
+        function copyData() {
+            const dataToCopy = document.getElementById('scrapedData').innerText;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = dataToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Data copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

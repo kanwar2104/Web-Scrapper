@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper | Kanwardeep Singh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="bg-[#FFFFFF] text-[#0F0F0F] md:max-w-full md:max-h-screen">
+    <nav class=" bg-[#93F3E8]">
+        <div class="flex justify-between px-10 py-4 text-3xl ">
+            <h1>Web Scraper | Kanwardeep Singh </h1>
+            <div>
+                <div class="flex gap-3">
+                    <a href="https://github.com/kanwar2104"><ion-icon name="logo-github"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        
+    </nav>
+    <div class="grid gap-6 md:grid-cols-2" >
+        <div class="flex flex-col justify-center gap-6 ">
+            <form method="POST" action="/">
+                <div class="grid gap-6 md:grid-cols-1 m-10 p-4 space-y-4 divide-gray-200 rounded shadow dark:divide-gray-700 md:p-6 dark:border-gray-700 flex bg-[#93F3E8]">
+                    <div>
+                        <label for="url" class="block mb-2 text-sm font-medium text-gray-900 ">Website URL</label>
+                        <input type="url" id="url" name="url" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#2C444E] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://kanwardeep.com" required />
+                    </div>
+                    <div>
+                        <label for="tag" class="block mb-2 text-sm font-medium text-gray-900 ">HTML Tag:</label>
+                        <select id="tag" name="tag" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#2C444E] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                            <option value="body">body</option>
+                            <option value="head">head</option>
+                            <option value="section">section</option>
+                            <option value="header">header</option>
+                            <option value="footer">footer</option>
+                            <option value="h1">h1</option>
+                            <option value="h2">h2</option>
+                            <option value="h3">h3</option>
+                            <option value="p">p</option>
+                            <option value="div">div</option>
+                            <option value="span">span</option>
+                        </select><br><br>
+                    </div>
+                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Scrape Data</button>
+                </div>
+                
+            </form>
+        </div>
+        <div>
+            <div class=" flex items-center justify-center">
+                <img src="https://cdn.discordapp.com/attachments/1133629539273162865/1219855972353183861/8426454_3918929.jpg?ex=660cd267&is=65fa5d67&hm=00940035beb20d508b78e01e2d2104f8a094cce360706bd181fa28812fa51a15&" class="max-w-[80%]" alt="#">
+            </div> 
+        </div>
+    </div>
+    
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
